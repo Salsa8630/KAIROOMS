@@ -1,3 +1,4 @@
+
 .aktivitas-container {
   background: linear-gradient(135deg, #ff7b00 0%, #ff9500 100%);
   min-height: 100vh;
@@ -38,7 +39,7 @@
 .kai-rooms-logo {
   display: flex;
   align-items: center;
-  gap: 4px; /* dikurangi dari 8px */
+  gap: 4px;
   color: white;
 }
 
@@ -48,7 +49,6 @@
   margin-right: 0; 
   flex-wrap: nowrap;
 }
-
 
 .logo-text {
   font-size: 16px;
@@ -167,20 +167,30 @@
   cursor: default;
 }
 
+/* Scrollable event section with sticky header */
 .events-section {
   background: white;
   border-radius: 12px;
   padding: 25px;
   flex: 1;
-  height: fit-content;
+  height: 500px;
+  overflow-y: auto;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .events-section h3 {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin: 0 0 20px 0;
   color: #333;
   font-size: 20px;
   font-weight: 600;
+  z-index: 10;
+  overflow: hidden;
 }
 
 .events-list {
@@ -221,32 +231,31 @@
   color: #888;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .aktivitas-container {
     padding: 15px;
   }
-  
+
   .aktivitas-content {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .aktivitas-header {
     flex-direction: column;
     gap: 15px;
     text-align: center;
   }
-  
+
   .aktivitas-title h1 {
     font-size: 20px;
   }
-  
+
   .calendar-section,
   .events-section {
     padding: 20px;
   }
-  
+
   .calendar-day {
     padding: 10px;
     min-height: 35px;
